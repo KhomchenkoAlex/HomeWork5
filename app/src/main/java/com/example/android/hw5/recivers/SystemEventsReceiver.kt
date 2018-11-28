@@ -9,18 +9,19 @@ import com.example.android.hw5.Updater
 
 class SystemEventsReceiver : BroadcastReceiver() {
 
-    var updater : Updater? = null
+    var updater: Updater? = null
     override fun onReceive(context: Context, intent: Intent) {
         when (intent.action) {
             ConnectivityManager.CONNECTIVITY_ACTION -> {
                 Toast.makeText(context, "NET", Toast.LENGTH_LONG).show()
-                updater?.updateNetworkInfo(context)}
+                updater?.updateNetworkInfo(context)
+            }
             Intent.ACTION_POWER_CONNECTED -> {
-                Toast.makeText(context, "POWER", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "POWER ON", Toast.LENGTH_LONG).show()
                 updater?.updatePowerInfo("POWER ON")
             }
             Intent.ACTION_POWER_DISCONNECTED -> {
-                Toast.makeText(context, "POWER", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "POWER OFF", Toast.LENGTH_LONG).show()
                 updater?.updatePowerInfo("POWER OFF")
             }
             Intent.ACTION_HEADSET_PLUG -> {
@@ -37,5 +38,4 @@ class SystemEventsReceiver : BroadcastReceiver() {
             }
         }
     }
-
 }

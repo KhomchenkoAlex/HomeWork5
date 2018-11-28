@@ -4,21 +4,30 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical"
-    android:background="@android:color/holo_blue_bright">
+    android:background="#BBDEFB">
 
     <EditText
         android:id="@+id/edit_text_label"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:hint="@string/edit_text_hint"/>
 
     <Switch
         android:id="@+id/switch_label"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/switch_text"
+        android:textSize="24sp"/>
 
     <Button
         android:id="@+id/button_label"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:text="@string/button_text"
+        android:textSize="24sp"/>
 
 </LinearLayout>

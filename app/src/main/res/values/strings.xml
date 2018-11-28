@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">HW5</string>
     <string name="system_info_label">System Info</string>
-    <string name="communication_fragment_label">Fragment Communication</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="communication_fragment_label">Communication Fragment</string>
+    <string name="edit_text_hint">Type here</string>
+    <string name="button_text">Press me</string>
+    <string name="switch_text">Switch me</string>
+    <string name="default_text">No data available</string>
 </resources>

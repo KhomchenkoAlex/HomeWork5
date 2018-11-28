@@ -13,15 +13,18 @@ class Updater {
     var headsetView: TextView? = null
     var powerView: TextView? = null
     var timeView: TextView? = null
+    var editTextStatus: TextView? = null
+    var switchStatus: TextView? = null
+    var buttonStatus: TextView? = null
 
     fun updateNetworkInfo(context: Context) {
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         if (connectivityManager.activeNetworkInfo != null && connectivityManager.activeNetworkInfo.isConnected) {
-            networkView?.text = "Internet available"
-        } else networkView?.text = "Internet disable"
+            networkView?.text = "INTERNET ON"
+        } else networkView?.text = "INTERNET OFF"
     }
 
-    fun updatePowerInfo(info: String){
+    fun updatePowerInfo(info: String) {
         powerView?.text = info
     }
 

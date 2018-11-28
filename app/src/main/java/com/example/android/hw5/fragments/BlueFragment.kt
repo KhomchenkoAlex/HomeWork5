@@ -28,30 +28,25 @@ class BlueFragment : Fragment(), CompoundButton.OnCheckedChangeListener, TextWat
     }
 
     override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
-        val myIntent = Intent("MY_SUPER_ACTION")
-        myIntent.putExtra("EXTRA_SWITCH_STATUS", isChecked)
-        context?.sendBroadcast(myIntent)
+        Intent("COMMUNICATION_ACTION").putExtra("SWITCH_STATUS", isChecked)
+                .let { context?.sendBroadcast(it) }
     }
 
     override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-        val i : Boolean = !event!!.equals(0)
-        val myIntent = Intent("MY_SUPER_ACTION")
-        myIntent.putExtra("EXTRA_TOUCH_BUTTON", i)
-        context?.sendBroadcast(myIntent)
-        return i
+        when (event?.action) {
+            MotionEvent.ACTION_DOWN -> Intent("COMMUNICATION_ACTION").putExtra("BUTTON_STATUS", true)
+                    .let { context?.sendBroadcast(it) }
+            MotionEvent.ACTION_UP -> Intent("COMMUNICATION_ACTION").putExtra("BUTTON_STATUS", false)
+                    .let { context?.sendBroadcast(it) }
+        }
+        return true
     }
-
 
     override fun afterTextChanged(s: Editable?) {
-        val myIntent = Intent("MY_SUPER_ACTION")
-        myIntent.putExtra("EXTRA_EDIT_TEXT", s.toString())
-        context?.sendBroadcast(myIntent)
+        Intent("COMMUNICATION_ACTION").putExtra("EDIT_TEXT", s.toString())
+                .let { context?.sendBroadcast(it) }
     }
 
-    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-    }
-
-    override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-    }
-
+    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+    override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
 }

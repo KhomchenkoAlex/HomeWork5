@@ -8,7 +8,7 @@
         android:name="com.example.android.hw5.fragments.BlueFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"
+        android:layout_margin="8dp"
         android:layout_weight="1" />
 
     <fragment
@@ -16,7 +16,7 @@
         android:name="com.example.android.hw5.fragments.GreenFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"
+        android:layout_margin="8dp"
         android:layout_weight="1" />
 
 </LinearLayout>

@@ -13,7 +13,7 @@ import com.example.android.hw5.Updater
 import com.example.android.hw5.recivers.SystemEventsReceiver
 
 
-class SystemInfoFragment: Fragment() {
+class SystemInfoFragment : Fragment() {
 
     private val systemEventsReceiver by lazy { SystemEventsReceiver() }
     private val viewUpdater by lazy { Updater() }
@@ -21,6 +21,7 @@ class SystemInfoFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.system_info_fragment, container, false)
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewUpdater.apply {
@@ -35,7 +36,7 @@ class SystemInfoFragment: Fragment() {
     override fun onStart() {
         super.onStart()
         val filter = IntentFilter()
-        filter.apply{
+        filter.apply {
             addAction(Intent.ACTION_POWER_CONNECTED)
             addAction(Intent.ACTION_POWER_DISCONNECTED)
             addAction(Intent.ACTION_HEADSET_PLUG)

@@ -6,13 +6,17 @@
     android:layout_height="match_parent">
     <Button
         android:id="@+id/btn_system_info"
-        android:text="@string/system_info_label"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/system_info_label"
+        android:textSize="24sp"/>
     <Button
         android:id="@+id/btn_frag_com"
-        android:text="@string/communication_fragment_label"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/communication_fragment_label"
+        android:textSize="24sp"/>
 
 </LinearLayout>
